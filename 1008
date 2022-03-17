@@ -1,0 +1,17 @@
+ #define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int i = 0;
+	while (scanf("%d", &i) != -1)
+	{
+		if (i == 2||i==3||i==5||i==7)
+			printf("Yes\n");
+		else if (i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0)
+			printf("Yes\n");
+		else
+			printf("No\n");
+	}
+	return 0;
+}
