@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int n = 0, m = 0;
+	while (~scanf("%d%d", &m, &n))
+	{
+		int arr[1000] = { 0 };
+		for (int i = 0; i < n; i++)//有n个人走来开灯
+		{
+			int j = 0;
+			for (j = i; j < m; j += 1 + i)//每次开关灯的操作
+			{
+				if (arr[j])
+					arr[j] = 0;
+				else
+					arr[j] = 1;
+			}
+		}
+		//开关灯结束，遍历寻找开着的灯
+		for (int j = 0; j < m; j++)
+		{
+			if (arr[j] == 1)
+				printf("%d\n", j + 1);//细节j+1灯的编号不是从0开始的
+		}
+	}
+	return 0;
+}
